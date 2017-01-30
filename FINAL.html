@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="OwenYeh" />
+
+
+<title>FInal REport</title>
+
+<script src="FINAL_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="FINAL_files/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="FINAL_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="FINAL_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="FINAL_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="FINAL_files/navigation-1.1/tabsets.js"></script>
+<script src="FINAL_files/htmlwidgets-0.8/htmlwidgets.js"></script>
+<link href="FINAL_files/plotlyjs-1.16.3/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="FINAL_files/plotlyjs-1.16.3/plotly-latest.min.js"></script>
+<script src="FINAL_files/plotly-binding-4.5.6/plotly.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">FInal REport</h1>
+<h4 class="author"><em>OwenYeh</em></h4>
+<h4 class="date"><em>20170130 created</em></h4>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a>輸/匯入資料</a></li>
+<li><a>清除未知數</a></li>
+<li><a>分組</a></li>
+<li><a>準確度計算</a></li>
+<li><a>探索沒上傳不存在的資料</a></li>
+<li><a>修正匯出格式</a></li>
+<li><a>寫出結論</a></li>
+<li><a href="#references">references</a></li>
+</ul>
+</div>
+
+<blockquote>
+<p>Ralph Waldo Emerson : We have conquered the power, so we have the strength</p>
+</blockquote>
+<div class="section level2">
+<h2>輸/匯入資料</h2>
+<p>將來自“<a href="https://storage.googleapis.com/r_rookies/kaggle_titanic_train.csv" class="uri">https://storage.googleapis.com/r_rookies/kaggle_titanic_train.csv</a>” 匯入資料庫之中，並且命名為titanic</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">titanic &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://storage.googleapis.com/r_rookies/kaggle_titanic_train.csv&quot;</span>)
+<span class="kw">str</span>(titanic)</code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    891 obs. of  12 variables:
+##  $ PassengerId: int  1 2 3 4 5 6 7 8 9 10 ...
+##  $ Survived   : int  0 1 1 1 0 0 0 0 1 1 ...
+##  $ Pclass     : int  3 1 3 1 3 3 1 3 3 2 ...
+##  $ Name       : Factor w/ 891 levels &quot;Abbing, Mr. Anthony&quot;,..: 109 191 358 277 16 559 520 629 417 581 ...
+##  $ Sex        : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 1 1 2 2 2 2 1 1 ...
+##  $ Age        : num  22 38 26 35 35 NA 54 2 27 14 ...
+##  $ SibSp      : int  1 1 0 1 0 0 0 3 0 1 ...
+##  $ Parch      : int  0 0 0 0 0 0 0 1 2 0 ...
+##  $ Ticket     : Factor w/ 681 levels &quot;110152&quot;,&quot;110413&quot;,..: 524 597 670 50 473 276 86 396 345 133 ...
+##  $ Fare       : num  7.25 71.28 7.92 53.1 8.05 ...
+##  $ Cabin      : Factor w/ 148 levels &quot;&quot;,&quot;A10&quot;,&quot;A14&quot;,..: 1 83 1 57 1 1 131 1 1 1 ...
+##  $ Embarked   : Factor w/ 4 levels &quot;&quot;,&quot;C&quot;,&quot;Q&quot;,&quot;S&quot;: 4 2 4 4 4 3 4 4 4 2 ...</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(titanic)</code></pre></div>
+<pre><code>##   PassengerId       Survived          Pclass     
+##  Min.   :  1.0   Min.   :0.0000   Min.   :1.000  
+##  1st Qu.:223.5   1st Qu.:0.0000   1st Qu.:2.000  
+##  Median :446.0   Median :0.0000   Median :3.000  
+##  Mean   :446.0   Mean   :0.3838   Mean   :2.309  
+##  3rd Qu.:668.5   3rd Qu.:1.0000   3rd Qu.:3.000  
+##  Max.   :891.0   Max.   :1.0000   Max.   :3.000  
+##                                                  
+##                                     Name         Sex           Age       
+##  Abbing, Mr. Anthony                  :  1   female:314   Min.   : 0.42  
+##  Abbott, Mr. Rossmore Edward          :  1   male  :577   1st Qu.:20.12  
+##  Abbott, Mrs. Stanton (Rosa Hunt)     :  1                Median :28.00  
+##  Abelson, Mr. Samuel                  :  1                Mean   :29.70  
+##  Abelson, Mrs. Samuel (Hannah Wizosky):  1                3rd Qu.:38.00  
+##  Adahl, Mr. Mauritz Nils Martin       :  1                Max.   :80.00  
+##  (Other)                              :885                NA&#39;s   :177    
+##      SibSp           Parch             Ticket         Fare       
+##  Min.   :0.000   Min.   :0.0000   1601    :  7   Min.   :  0.00  
+##  1st Qu.:0.000   1st Qu.:0.0000   347082  :  7   1st Qu.:  7.91  
+##  Median :0.000   Median :0.0000   CA. 2343:  7   Median : 14.45  
+##  Mean   :0.523   Mean   :0.3816   3101295 :  6   Mean   : 32.20  
+##  3rd Qu.:1.000   3rd Qu.:0.0000   347088  :  6   3rd Qu.: 31.00  
+##  Max.   :8.000   Max.   :6.0000   CA 2144 :  6   Max.   :512.33  
+##                                   (Other) :852                   
+##          Cabin     Embarked
+##             :687    :  2   
+##  B96 B98    :  4   C:168   
+##  C23 C25 C27:  4   Q: 77   
+##  G6         :  4   S:644   
+##  C22 C26    :  3           
+##  D          :  3           
+##  (Other)    :186</code></pre>
+<p><br /> ##將Titanic 的資料彙整成圖，觀察性別、年紀與社經地位</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(plotly)
+TT1&lt;-<span class="kw">ggplot</span>(titanic, <span class="kw">aes</span>(Pclass)) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> Sex))+
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;the quantity of Passenger classes vesus different kind of sexes&quot;</span>)
+<span class="kw">ggplotly</span>(TT1)</code></pre></div>
+<p><div id="htmlwidget-53f1709503f24cae98f1" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-53f1709503f24cae98f1">{"x":{"data":[{"x":[1,2,3],"y":[94,76,144],"text":["Sex: female<br>count: 216<br>Pclass: 1","Sex: female<br>count: 184<br>Pclass: 2","Sex: female<br>count: 491<br>Pclass: 3"],"key":null,"type":"bar","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"female","legendgroup":"female","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text"},{"x":[1,2,3],"y":[122,108,347],"text":["Sex: male<br>count: 122<br>Pclass: 1","Sex: male<br>count: 108<br>Pclass: 2","Sex: male<br>count: 347<br>Pclass: 3"],"key":null,"type":"bar","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"male","legendgroup":"male","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text"}],"layout":{"margin":{"t":43.7625570776256,"r":7.30593607305936,"b":40.1826484018265,"l":43.1050228310502},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":"the quantity of Passenger classes vesus different kind of sexes","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"xaxis":{"domain":[0,1],"type":"linear","autorange":false,"tickmode":"array","range":[0.405,3.595],"ticktext":["1","2","3"],"tickvals":[1,2,3],"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":"Pclass","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"type":"linear","autorange":false,"tickmode":"array","range":[-24.55,515.55],"ticktext":["0","100","200","300","400","500"],"tickvals":[0,100,200,300,400,500],"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"count","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"y":0.93503937007874},"annotations":[{"text":"Sex","x":1.02,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"left","yanchor":"bottom","legendTitle":true}],"barmode":"stack","bargap":0,"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script> <br /> <br /> <br /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">TT2&lt;-<span class="kw">ggplot</span>(titanic, <span class="kw">aes</span>(<span class="dt">x =</span> Age)) +
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> Sex))+
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;the quantity of different ages humanbeings vesus different kind of sexes&quot;</span>)
+<span class="kw">ggplotly</span>(TT2)</code></pre></div>
+<div id="htmlwidget-33ef85862be4a98c400b" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-33ef85862be4a98c400b">{"x":{"data":[{"x":[0,2.74413793103448,5.48827586206896,8.23241379310345,10.9765517241379,13.7206896551724,16.4648275862069,19.2089655172414,21.9531034482759,24.6972413793103,27.4413793103448,30.1855172413793,32.9296551724138,35.6737931034483,38.4179310344828,41.1620689655172,43.9062068965517,46.6503448275862,49.3944827586207,52.1386206896552,54.8827586206897,57.6268965517241,60.3710344827586,63.1151724137931,65.8593103448276,68.6034482758621,71.3475862068966,74.091724137931,76.8358620689655,79.58],"y":[4,13,6,7,2,11,12,22,24,26,13,26,14,16,11,13,11,6,7,4,5,4,1,3,0,0,0,0,0,0],"text":["Sex: female<br>count: 14<br>Age: 0","Sex: female<br>count: 26<br>Age: 2.74","Sex: female<br>count: 7<br>Age: 5.49","Sex: female<br>count: 15<br>Age: 8.23","Sex: female<br>count: 7<br>Age: 10.98","Sex: female<br>count: 14<br>Age: 13.72","Sex: female<br>count: 30<br>Age: 16.46","Sex: female<br>count: 67<br>Age: 19.21","Sex: female<br>count: 66<br>Age: 21.95","Sex: female<br>count: 73<br>Age: 24.7","Sex: female<br>count: 45<br>Age: 27.44","Sex: female<br>count: 64<br>Age: 30.19","Sex: female<br>count: 50<br>Age: 32.93","Sex: female<br>count: 48<br>Age: 35.67","Sex: female<br>count: 25<br>Age: 38.42","Sex: female<br>count: 34<br>Age: 41.16","Sex: female<br>count: 26<br>Age: 43.91","Sex: female<br>count: 23<br>Age: 46.65","Sex: female<br>count: 16<br>Age: 49.39","Sex: female<br>count: 14<br>Age: 52.14","Sex: female<br>count: 15<br>Age: 54.88","Sex: female<br>count: 7<br>Age: 57.63","Sex: female<br>count: 9<br>Age: 60.37","Sex: female<br>count: 8<br>Age: 63.12","Sex: female<br>count: 4<br>Age: 65.86","Sex: female<br>count: 0<br>Age: 68.6","Sex: female<br>count: 5<br>Age: 71.35","Sex: female<br>count: 1<br>Age: 74.09","Sex: female<br>count: 0<br>Age: 76.84","Sex: female<br>count: 1<br>Age: 79.58"],"key":null,"type":"bar","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"female","legendgroup":"female","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text"},{"x":[0,2.74413793103448,5.48827586206896,8.23241379310345,10.9765517241379,13.7206896551724,16.4648275862069,19.2089655172414,21.9531034482759,24.6972413793103,27.4413793103448,30.1855172413793,32.9296551724138,35.6737931034483,38.4179310344828,41.1620689655172,43.9062068965517,46.6503448275862,49.3944827586207,52.1386206896552,54.8827586206897,57.6268965517241,60.3710344827586,63.1151724137931,65.8593103448276,68.6034482758621,71.3475862068966,74.091724137931,76.8358620689655,79.58],"y":[10,13,1,8,5,3,18,45,42,47,32,38,36,32,14,21,15,17,9,10,10,3,8,5,4,0,5,1,0,1],"text":["Sex: male<br>count: 10<br>Age: 0","Sex: male<br>count: 13<br>Age: 2.74","Sex: male<br>count: 1<br>Age: 5.49","Sex: male<br>count: 8<br>Age: 8.23","Sex: male<br>count: 5<br>Age: 10.98","Sex: male<br>count: 3<br>Age: 13.72","Sex: male<br>count: 18<br>Age: 16.46","Sex: male<br>count: 45<br>Age: 19.21","Sex: male<br>count: 42<br>Age: 21.95","Sex: male<br>count: 47<br>Age: 24.7","Sex: male<br>count: 32<br>Age: 27.44","Sex: male<br>count: 38<br>Age: 30.19","Sex: male<br>count: 36<br>Age: 32.93","Sex: male<br>count: 32<br>Age: 35.67","Sex: male<br>count: 14<br>Age: 38.42","Sex: male<br>count: 21<br>Age: 41.16","Sex: male<br>count: 15<br>Age: 43.91","Sex: male<br>count: 17<br>Age: 46.65","Sex: male<br>count: 9<br>Age: 49.39","Sex: male<br>count: 10<br>Age: 52.14","Sex: male<br>count: 10<br>Age: 54.88","Sex: male<br>count: 3<br>Age: 57.63","Sex: male<br>count: 8<br>Age: 60.37","Sex: male<br>count: 5<br>Age: 63.12","Sex: male<br>count: 4<br>Age: 65.86","Sex: male<br>count: 0<br>Age: 68.6","Sex: male<br>count: 5<br>Age: 71.35","Sex: male<br>count: 1<br>Age: 74.09","Sex: male<br>count: 0<br>Age: 76.84","Sex: male<br>count: 1<br>Age: 79.58"],"key":null,"type":"bar","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"male","legendgroup":"male","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text"}],"layout":{"margin":{"t":43.7625570776256,"r":7.30593607305936,"b":40.1826484018265,"l":37.2602739726027},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":"the quantity of different ages humanbeings vesus different kind of sexes","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"xaxis":{"domain":[0,1],"type":"linear","autorange":false,"tickmode":"array","range":[-5.48827586206897,85.068275862069],"ticktext":["0","20","40","60","80"],"tickvals":[0,20,40,60,80],"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":"Age","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"type":"linear","autorange":false,"tickmode":"array","range":[-3.65,76.65],"ticktext":["0","20","40","60"],"tickvals":[4.44089209850063e-016,20,40,60],"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":"count","titlefont":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"y":0.93503937007874},"annotations":[{"text":"Sex","x":1.02,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"left","yanchor":"bottom","legendTitle":true}],"barmode":"stack","bargap":0,"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
+<p><br /></p>
+</div>
+<div class="section level2">
+<h2>清除未知數</h2>
+<p>使程式碼簡潔化</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">titanic &lt;-<span class="st"> </span>titanic[<span class="kw">complete.cases</span>(titanic), ]
+titanic$Survived &lt;-<span class="st"> </span><span class="kw">factor</span>(titanic$Survived)
+titanic$Embarked &lt;-<span class="st"> </span><span class="kw">as.character</span>(titanic$Embarked)
+titanic$Embarked[titanic$Embarked ==<span class="st"> &quot;&quot;</span>] &lt;-<span class="st"> &quot;S&quot;</span>
+titanic$Embarked &lt;-<span class="st"> </span><span class="kw">factor</span>(titanic$Embarked)</code></pre></div>
+<p><br /></p>
+</div>
+<div class="section level2">
+<h2>分組</h2>
+<p>以70%的資料作為訓練駔，剩下的為測試組</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n &lt;-<span class="st"> </span><span class="kw">nrow</span>(titanic)
+<span class="kw">set.seed</span>(<span class="dv">90</span>)
+shuffled_titanic &lt;-<span class="st"> </span>titanic[<span class="kw">sample</span>(n), ]
+train_indices &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="kw">round</span>(<span class="fl">0.7</span> *<span class="st"> </span>n)
+train &lt;-<span class="st"> </span>shuffled_titanic[train_indices, ]
+test_indices &lt;-<span class="st"> </span>(<span class="kw">round</span>(<span class="fl">0.7</span> *<span class="st"> </span>n) +<span class="st"> </span><span class="dv">1</span>):n
+test &lt;-<span class="st"> </span>shuffled_titanic[test_indices, ]</code></pre></div>
+<p><br /></p>
+</div>
+<div class="section level2">
+<h2>準確度計算</h2>
+<p>利用<code>rpart</code>的樹模型，並利用<code>confusion_matrix</code>去計算其準確度</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&quot;rpart&quot;)</span>
+<span class="kw">library</span>(rpart)
+tree_fit &lt;-<span class="st"> </span><span class="kw">rpart</span>(Survived ~<span class="st"> </span>Pclass +<span class="st"> </span>Sex +<span class="st"> </span>Age +<span class="st"> </span>SibSp +<span class="st"> </span>Parch +<span class="st"> </span>Fare +<span class="st"> </span>Embarked, <span class="dt">data =</span> train, <span class="dt">method =</span> <span class="st">&quot;class&quot;</span>)
+prediction &lt;-<span class="st"> </span><span class="kw">predict</span>(tree_fit, test[, <span class="kw">c</span>(<span class="st">&quot;Pclass&quot;</span>, <span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;SibSp&quot;</span>, <span class="st">&quot;Parch&quot;</span>, <span class="st">&quot;Fare&quot;</span>, <span class="st">&quot;Embarked&quot;</span>)], <span class="dt">type =</span> <span class="st">&quot;class&quot;</span>)
+confusion_matrix &lt;-<span class="st"> </span><span class="kw">table</span>(test$Survived, prediction)
+accuracy &lt;-<span class="st"> </span><span class="kw">sum</span>(<span class="kw">diag</span>(confusion_matrix)) /<span class="st"> </span><span class="kw">sum</span>(confusion_matrix)
+accuracy</code></pre></div>
+<pre><code>## [1] 0.817757</code></pre>
+<p><br /></p>
+</div>
+<div class="section level2">
+<h2>探索沒上傳不存在的資料</h2>
+<p>輸入 to_predict</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">url &lt;-<span class="st"> &quot;https://storage.googleapis.com/py_ds_basic/kaggle_titanic_test.csv&quot;</span>
+to_predict &lt;-<span class="st"> </span><span class="kw">read.csv</span>(url)
+<span class="kw">summary</span>(to_predict)</code></pre></div>
+<pre><code>##   PassengerId         Pclass     
+##  Min.   : 892.0   Min.   :1.000  
+##  1st Qu.: 996.2   1st Qu.:1.000  
+##  Median :1100.5   Median :3.000  
+##  Mean   :1100.5   Mean   :2.266  
+##  3rd Qu.:1204.8   3rd Qu.:3.000  
+##  Max.   :1309.0   Max.   :3.000  
+##                                  
+##                                         Name         Sex     
+##  Abbott, Master. Eugene Joseph            :  1   female:152  
+##  Abelseth, Miss. Karen Marie              :  1   male  :266  
+##  Abelseth, Mr. Olaus Jorgensen            :  1               
+##  Abrahamsson, Mr. Abraham August Johannes :  1               
+##  Abrahim, Mrs. Joseph (Sophie Halaut Easu):  1               
+##  Aks, Master. Philip Frank                :  1               
+##  (Other)                                  :412               
+##       Age            SibSp            Parch             Ticket   
+##  Min.   : 0.17   Min.   :0.0000   Min.   :0.0000   PC 17608:  5  
+##  1st Qu.:21.00   1st Qu.:0.0000   1st Qu.:0.0000   113503  :  4  
+##  Median :27.00   Median :0.0000   Median :0.0000   CA. 2343:  4  
+##  Mean   :30.27   Mean   :0.4474   Mean   :0.3923   16966   :  3  
+##  3rd Qu.:39.00   3rd Qu.:1.0000   3rd Qu.:0.0000   220845  :  3  
+##  Max.   :76.00   Max.   :8.0000   Max.   :9.0000   347077  :  3  
+##  NA&#39;s   :86                                        (Other) :396  
+##       Fare                     Cabin     Embarked
+##  Min.   :  0.000                  :327   C:102   
+##  1st Qu.:  7.896   B57 B59 B63 B66:  3   Q: 46   
+##  Median : 14.454   A34            :  2   S:270   
+##  Mean   : 35.627   B45            :  2           
+##  3rd Qu.: 31.500   C101           :  2           
+##  Max.   :512.329   C116           :  2           
+##  NA&#39;s   :1         (Other)        : 80</code></pre>
+<p>先將年齡用平均年齡填滿</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&quot;dplyr&quot;)</span>
+<span class="kw">library</span>(dplyr)
+<span class="co">#install.packages(&quot;magrittr&quot;)</span>
+<span class="kw">library</span>(magrittr)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mean_age_by_Pclass &lt;-<span class="st"> </span>to_predict %&gt;%
+<span class="st">  </span><span class="kw">group_by</span>(Pclass) %&gt;%
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_age =</span> <span class="kw">round</span>(<span class="kw">mean</span>(Age, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)))
+
+filter_1 &lt;-<span class="st"> </span><span class="kw">is.na</span>(to_predict$Age) &amp;<span class="st"> </span>to_predict$Pclass ==<span class="st"> </span><span class="dv">1</span>
+filter_2 &lt;-<span class="st"> </span><span class="kw">is.na</span>(to_predict$Age) &amp;<span class="st"> </span>to_predict$Pclass ==<span class="st"> </span><span class="dv">2</span>
+filter_3 &lt;-<span class="st"> </span><span class="kw">is.na</span>(to_predict$Age) &amp;<span class="st"> </span>to_predict$Pclass ==<span class="st"> </span><span class="dv">3</span>
+mean_age_by_Pclass</code></pre></div>
+<pre><code>## # A tibble: 3 × 2
+##   Pclass mean_age
+##    &lt;int&gt;    &lt;dbl&gt;
+## 1      1       41
+## 2      2       29
+## 3      3       24</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">to_predict[filter_1, ]$Age &lt;-<span class="st"> </span><span class="dv">41</span>
+to_predict[filter_2, ]$Age &lt;-<span class="st"> </span><span class="dv">29</span>
+to_predict[filter_3, ]$Age &lt;-<span class="st"> </span><span class="dv">24</span></code></pre></div>
+<p>再將FARE用其平均值填滿</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fare_mean &lt;-<span class="st"> </span><span class="kw">mean</span>(to_predict$Fare, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
+to_predict$Fare[<span class="kw">is.na</span>(to_predict$Fare)] &lt;-<span class="st"> </span>fare_mean</code></pre></div>
+<p>匯出一個結論</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(to_predict)</code></pre></div>
+<pre><code>##   PassengerId         Pclass     
+##  Min.   : 892.0   Min.   :1.000  
+##  1st Qu.: 996.2   1st Qu.:1.000  
+##  Median :1100.5   Median :3.000  
+##  Mean   :1100.5   Mean   :2.266  
+##  3rd Qu.:1204.8   3rd Qu.:3.000  
+##  Max.   :1309.0   Max.   :3.000  
+##                                  
+##                                         Name         Sex     
+##  Abbott, Master. Eugene Joseph            :  1   female:152  
+##  Abelseth, Miss. Karen Marie              :  1   male  :266  
+##  Abelseth, Mr. Olaus Jorgensen            :  1               
+##  Abrahamsson, Mr. Abraham August Johannes :  1               
+##  Abrahim, Mrs. Joseph (Sophie Halaut Easu):  1               
+##  Aks, Master. Philip Frank                :  1               
+##  (Other)                                  :412               
+##       Age            SibSp            Parch             Ticket   
+##  Min.   : 0.17   Min.   :0.0000   Min.   :0.0000   PC 17608:  5  
+##  1st Qu.:23.00   1st Qu.:0.0000   1st Qu.:0.0000   113503  :  4  
+##  Median :25.00   Median :0.0000   Median :0.0000   CA. 2343:  4  
+##  Mean   :29.41   Mean   :0.4474   Mean   :0.3923   16966   :  3  
+##  3rd Qu.:36.38   3rd Qu.:1.0000   3rd Qu.:0.0000   220845  :  3  
+##  Max.   :76.00   Max.   :8.0000   Max.   :9.0000   347077  :  3  
+##                                                    (Other) :396  
+##       Fare                     Cabin     Embarked
+##  Min.   :  0.000                  :327   C:102   
+##  1st Qu.:  7.896   B57 B59 B63 B66:  3   Q: 46   
+##  Median : 14.454   A34            :  2   S:270   
+##  Mean   : 35.627   B45            :  2           
+##  3rd Qu.: 31.500   C101           :  2           
+##  Max.   :512.329   C116           :  2           
+##                    (Other)        : 80</code></pre>
+<p><strong>to_predict的NA已經清空</strong></p>
+</div>
+<div class="section level2">
+<h2>修正匯出格式</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">predicted &lt;-<span class="st"> </span><span class="kw">predict</span>(tree_fit, <span class="dt">newdata =</span> to_predict[, <span class="kw">c</span>(<span class="st">&quot;Pclass&quot;</span>, <span class="st">&quot;Sex&quot;</span>, <span class="st">&quot;Age&quot;</span>, <span class="st">&quot;SibSp&quot;</span>, <span class="st">&quot;Parch&quot;</span>, <span class="st">&quot;Fare&quot;</span>, <span class="st">&quot;Embarked&quot;</span>)])
+result &lt;-<span class="st"> </span><span class="kw">data.frame</span>(to_predict[, <span class="st">&quot;PassengerId&quot;</span>], predicted)
+<span class="kw">names</span>(result) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;PassengerId&quot;</span>, <span class="st">&quot;Survived&quot;</span>)
+<span class="kw">head</span>(result, <span class="dt">n =</span> <span class="dv">10</span>)</code></pre></div>
+<pre><code>##    PassengerId  Survived        NA
+## 1          892 0.8888889 0.1111111
+## 2          893 0.7333333 0.2666667
+## 3          894 0.8888889 0.1111111
+## 4          895 0.8888889 0.1111111
+## 5          896 0.7333333 0.2666667
+## 6          897 0.8888889 0.1111111
+## 7          898 0.3571429 0.6428571
+## 8          899 0.8888889 0.1111111
+## 9          900 0.3571429 0.6428571
+## 10         901 0.8888889 0.1111111</code></pre>
+</div>
+<div class="section level2">
+<h2>寫出結論</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write.csv</span>(result, <span class="dt">file =</span> <span class="st">&quot;result_of_the_Tiatanic_report.csv&quot;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<div class="figure">
+<img src="https://4.bp.blogspot.com/-OCLkiSwee-Q/WI8an8LOPgI/AAAAAAAAAT4/_IajLvnpyPc7T27cG3nblqJ_-BYaDA3ywCLcB/s1600/FINAL1.png" alt="The Result and the rank" />
+<p class="caption">The Result and the rank</p>
+</div>
+</div>
+<div id="references" class="section level1">
+<h1>references</h1>
+<p>台大資工系統訓練班 R 程式設計班的教學專案– <a href="https://yaojenkuo.github.io/r_programming/" class="uri">https://yaojenkuo.github.io/r_programming/</a></p>
+<p>R Markdown Cheat Sheet– <a href="http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf" class="uri">http://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf</a></p>
+<p>DataCampRmd– <a href="https://github.com/dspim/DataCampRmd/blob/master/index.md" class="uri">https://github.com/dspim/DataCampRmd/blob/master/index.md</a></p>
+<div class="figure">
+<img src="http://www.migflug.com/jetflights/wp-content/uploads/2015/03/reditt-com-mig-25-foxbat.jpg" alt="what message does R handle and created for you when it’s correctly used looks like:" />
+<p class="caption">what message does R handle and created for you when it’s correctly used looks like:</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
